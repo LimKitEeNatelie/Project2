@@ -187,12 +187,13 @@ public class Project2 {
 
 		}
 		
-		 if (type ==3 ) {
+		 if (type == 3 ) {
 
-				printDetails();
-				printDownpayment();
-				printCars();
+			    printDetails();
+			    printCar();
+				printDiscountCar();
 				printFreegift();
+				
 				
 		 }
 		 
@@ -206,8 +207,13 @@ public class Project2 {
 		 }
 		 
 		 if(type == 5) {
-		    	printCustomer();
-				printTicket();
+			    
+			    printCustomer();
+				printTicketList();
+				printPriceList();
+				printDiscount();
+				printTotal();
+
 		    }
 	
 	}
@@ -338,119 +344,147 @@ public class Project2 {
 
 	}
 		
-		static int downpayment; 
-		
+		//cars
 		public static void printDetails() {
-		Scanner input = new Scanner (System.in);
-		System.out.println("Details of Customer");
-		
-		String[][] name = {{"Mr", "Ms", "Miss"},
-				           {"Natasya", "Siti Rahayu", "Nurin Nabihah", "Azri", "Akmal"}
-		}; 
-		 
-		System.out.print("Enter Your Name: ");
-		System.out.println("Name: " + name[0][2] + " " + name [1][0]);
-			
-		System.out.print("Enter Your I/C Number: ");
-		String ic = input.next();
-		System.out.println("IC Number: " + ic);
-		
-		
-		//do while loop
-		int[] age = {21, 40, 50, 35, 28};
-			
-		int k = 0;
-		do {
-			System.out.print("Enter Your Age: ");
-			System.out.println("Age: " + age[0]);
-			k++;
-			
-		}while (k < 1);
-		
-		String[] gender = {"Female", "Male"};
-		
-	
-		int b = 0;
-		do {
-			System.out.print("Enter Your Gender: ");
-			System.out.println("Gender: " + gender[0]);
-			b++;
-			
-		}while (b < 1);
-		
-		}
-		
-		
-		public static void printDownpayment() {
-		Scanner input = new Scanner (System.in);
-		int downpayment;
-		
-		System.out.print("Enter Your Package Downpayment: ");
-		downpayment = input.nextInt();
-		
-		if(downpayment < 5000) {
-			System.out.println("Your Suitable Car is: " + "Axia");
-			
-		} else if(downpayment < 7000) {
-			System.out.println("Your Suitable Car is: " + "Bezza");
-			
-		} else if(downpayment< 9000) {
-			System.out.println("Your Suitable Car is: " + "Myvi");
-		
-		} else if(downpayment < 10000) {
-			System.out.println("Your Suitable Car is: " + "Alza");
-			
-		} else
-			System.out.println("Your Suitable Car is: " + "Aruz");
-			
-		}
-		
-	
-		public static void printCars() {
-		Scanner input = new Scanner (System.in);
-	    
-		double discount;
-		
-		if(downpayment < 5000) {
-			discount = downpayment * 0.02;
+			Scanner input = new Scanner (System.in);
+			System.out.println("Details of Customer");
 			System.out.println();
+			 
+			System.out.print("Enter Your Name       : ");
+			String name = input.next();
+			System.out.println("Name                  : " + name );
+				
+			System.out.print("Enter Your I/C Number : ");
+			String ic = input.next();
+			System.out.println("IC Number             : " + ic);
 			
-		} else if(downpayment < 7000) {
-			discount = downpayment * 0.04;
-			System.out.println();
+			System.out.print("Enter Your No. Phone  : ");
+			int phone = input.nextInt();
+			System.out.println("No. Phone             : " + phone);
 			
-			
-		} else if(downpayment< 9000) {
-			discount = downpayment * 0.06;
-			System.out.println();
 		
+			//do while loop	
+			int k = 0;
+			do {
+				System.out.print("Enter Your Age        : ");
+				int age = input.nextInt();
+				System.out.println("Age                   : " + age);
+				k++;
+				
+			}while (k < 1);
 			
-		} else if(downpayment < 10000) {
-			discount = downpayment * 0.08;
-			System.out.println();
+		
+			int b = 0;
+			do {
+				System.out.print("Enter Your Gender     : ");
+				String gender = input.next();
+				System.out.println("Gender                : " + gender);
+				b++;
+				
+			}while (b < 1);
 			
-			
-		} else
-			discount = downpayment * 0.10;
-			System.out.println();
-			
-		}
-		
-		
-		//while loop
-		public static void printFreegift() {
-		Scanner input = new Scanner (System.in);
-		
-		String[] freegift = {"Keychain", "Books", "Pen", "Umbrella"};
-		
-		int a = 0;
-		while(a < 1) {
-			  System.out.println("Your Freegift is: " + freegift[3] + "," + " " + freegift[0]);
-			  a++;	   
 			}
-		
-		}
-		
+			
+			
+			public static void printCar() {
+			Scanner input = new Scanner (System.in);
+			
+			System.out.println();
+			System.out.println("Welcome to Perodua! Start Your New Year With New Car!");
+			System.out.println("We Have Myvi Special Price for You Guys!");
+			System.out.println("Types of Myvi : ");
+			System.out.println();
+					
+			int[] price = {52697, 50530, 46959, 44959, 43029, 41292};
+			change1 (price);
+			
+			}
+			
+			public static void change1 (int[] a) {
+				int[] price = new int [6];
+				price[0] = 52697;
+				price[1] = 50530;
+				price[2] = 46959;
+				price[3] = 44959;
+				price[4] = 43029;
+				price[5] = 41292;
+			
+			System.out.println("i.   Myvi 1.5L AV WITH A.S.A 2.0  : RM " +  price[0]);
+			System.out.println("ii.  Myvi 1.5L H  WITH A.S.A 2.0  : RM " +  price[1]);
+			System.out.println("iii. Myvi 1.3L X  WITH A.S.A 2.0  : RM " +  price[2]);
+			System.out.println("iv.  Myvi 1.3L X  W/OUT A.S.A 2.0 : RM " +  price[3]);
+			System.out.println("v.   Myvi 1.3L G                  : RM " +  price[4]);
+			System.out.println("vi.  Myvi 1.3L G  MANUAL          : RM " +  price[5]);
+			
+			}
+			
+			public static void printDiscountCar() {
+			Scanner input = new Scanner (System.in);
+			 
+			int price, deposit1, quantity;
+			double amount, discount, totalprice;
+			
+			System.out.println();
+			System.out.print("Number of Type of Myvi : ");
+			int num = input.nextInt();
+			System.out.println("Type of Myvi           : " + num);
+			
+			System.out.print("Enter Quantity         : ");
+			quantity = input.nextInt();
+			
+			System.out.print("Enter Price         RM : ");
+			price = input.nextInt();
+			
+			amount = quantity * price;
+			System.out.println("Price               RM : " + amount);
+			System.out.println();
+			
+			System.out.print("Enter Deposit   RM : ");
+			deposit1 = input.nextInt();
+
+		    double total;
+			total = deposit1;
+			
+			if(deposit1 >= 4000 && deposit1 <= 6000) {
+				discount = deposit1 * 0.1;
+				
+			} else if(deposit1 >= 6001 && deposit1 <= 8000) {
+				discount = deposit1 * 0.15;
+				
+			} else if(deposit1 >= 8001 && deposit1 <= 10000) {
+				discount = deposit1 * 0.2;
+				
+			} else if(deposit1 >= 10001 && deposit1 <= 12000) {
+				discount = deposit1 * 0.25;
+				
+			} else
+				discount = 0;
+
+			System.out.println("Discount        RM : " +  discount);
+			totalprice = price - discount;
+			System.out.println("The Total Price RM : " + totalprice);
+			
+			}
+
+			//while loop
+			public static void printFreegift() {
+			Scanner input = new Scanner (System.in);
+			System.out.println();
+			
+			String[] freegift = {"Keychain", "Books", "Pen", "Umbrella"};
+			
+			int a = 0;
+			while(a < 1) {
+				  System.out.println("Your Freegift is   : " + freegift[3] + " " + "&" + " " + freegift[0]);
+				  a++;	 
+				  
+				 }
+			
+			System.out.println();
+			System.out.println("Thank You for Choosing Perodua to Be A Part of Your Life!!");
+			}
+			
+			
 		//boat
 		public static void PrintBoat() {
 			Scanner in = new Scanner (System.in);
@@ -563,127 +597,170 @@ public class Project2 {
 			
 		}
 		
-		
+		//train
 		public static void printCustomer() {
-			
-			System.out.println("**********WELCOME TO OUR TRAIN STATION**********");
+			System.out.println("***WELCOME TO OUR TRAIN STATION***");
+			System.out.println("Today-SATURDAY");
+			System.out.println("We provide a discount price on every weekend!!!");
 			System.out.println();
+			
 			Scanner in = new Scanner (System.in);
 			
 			System.out.print("Enter Name: ");
 			String name = in.nextLine();
 			System.out.println("Name: " + name);
 			System.out.println();
+			
 			System.out.print("Enter Work: ");
 			String work = in.nextLine();
 			System.out.println("Work: " + work);
 			System.out.println();
+			
 			System.out.print("Enter Age: ");
 			int age = in.nextInt();
 			System.out.println("Age: " + age);
 			System.out.println();
 			
-			System.out.print("How many person with you?" );
-	        int person = in.nextInt();
-	        for (int i=0; i<=person; i++); {
-	        	System.out.print("Enter Your Partner Name: ");
-	        	String name2 = in.next();
-	        }
+			int salary = 5000;
+			while (salary <= 4999){
+				System.out.print("Enter salary: ");
+				System.out.println("Salary: RM " + salary);
+				salary++;
+			}
 			
-			System.out.print("Enter salary: ");
-			int salary = in.nextInt();
-			System.out.println("Salary: " + salary);
 			System.out.println();
 			
-			System.out.println("Enter customer background: " + name + "\n\t\t " + age + "\n\t\t " + work + "\n\t\t " + salary);
+			
+			System.out.println("Enter customer background: Name " + name + "\n\t\t\t   Age " + age + "\n\t\t\t   Work " + work + "\n\t\t\t   Salary " + salary);
 			System.out.println();
 		}
-
 		
-			public static void printTicket() {
+			public static void printTicketList() {
 				
 				Scanner in = new Scanner (System.in);
 				
-				String[] routes = {"Batu Cave to Pulau Sebang", "Tanjung Malim to Pelabuhan Klang", "Padang Rengas to Bukit Mertajam", "Butterworth to Padang Besar", "Pulau Sebang to Batu Cave", "Pelabuhan Klang to Tanjung Malim", "Bukit Mertajam to Padang Rengas", "Padang Besar to Butterworth"};
+				String[] routes = new String[8];
+				routes[0] = "Batu Cave-Pulau Sebang (BC-PS)";
+				routes[1] = "Tanjung Malim-Pelabuhan Klang (TM-PK)";
+				routes[2] = "Padang Rengas-Bukit Mertajam (PR-BM)";
+				routes[3] = "Butterworth-Padang Besar (BW-PB)";
+				routes[4] = "Pulau Sebang-Batu Cave (PS-BC)";
+				routes[5] = "Pelabuhan Klang-Tanjung Malim (PK-TM)";
+				routes[6] = "Bukit Mertajam-Padang Rengas(BM-PR)";
+				routes[7] = "Padang Besar-Butterworth (PB-BW)";
+			
 				
 				System.out.println("These are the routes that our station provided: ");
 				
-				for (int i = 0; i < routes.length; i++) {
-					System.out.println(routes[i]);
+				for (int i = 0; i < 8; i++) {
+						System.out.println(routes[i]);
+					}
+					System.out.println();
+					System.out.print("Which routes do you want to take?: " + routes[0] + " and " + routes[4]);
+					System.out.println();
+				}
+				
+				
+			
+				public static void printPriceList() {
+					
+					Scanner in = new Scanner (System.in);
+					
+					int[] price = {35, 30, 32, 40, 33, 31, 34, 38};
+					
+				System.out.println("These are the list of price base on the route: ");
+				
+						System.out.println("(BC-PS) = RM " + price[0]);
+						System.out.println("(TM-PK) = RM " + price[1]);
+						System.out.println("(PR-BM) = RM " + price[2]);
+						System.out.println("(BW-PB) = RM " + price[3]);
+						System.out.println("(PS-BC) = RM " + price[4]);
+						System.out.println("(PK-TM) = RM " + price[5]);
+						System.out.println("(BM-PR) = RM " + price[6]);
+						System.out.println("(PB-BW) = RM " + price[7]);
+						
+						System.out.println("Normal price for your purchase = RM " + (price[0]+price[4]));
+						System.out.println();
+				}
+				
+				
+				public static void printBuy() {
+					
+					Scanner in = new Scanner (System.in);
+					
+					int routes;
+					System.out.println("Which routes do you want to choose?: ");
+					System.out.println("Just enter the number");
+					routes = in.nextInt();
+					System.out.println("I will choose: " + routes);
 					System.out.println();
 					
 				}
 				
-				int[] fee = new int[8];
-				fee[0] = 35;
-				fee[1] = 30;
-				fee[2] = 32;
-				fee[3] = 40;
-				fee[4] = 33;
-				fee[5] = 31;
-				fee[6] = 34;
-				fee[7] = 38;
+				public static void printDiscount() {
+							
+							Scanner in = new Scanner (System.in);
+							
+							System.out.println("You will get discount if you book the ticket today!");
+							int sum;
+							
+							System.out.print("Enter the normal price: RM ");
+							sum = in.nextInt();
+							
+							if (sum == 30 || sum <= 34) {
+								System.out.println("You will get 5% off");
+								System.out.println();
+								
+							}else if (sum == 35 || sum < 41) {
+								System.out.println("You will get 10% off");
+								System.out.println();
+								
+							}else if (sum >= 41) {
+								System.out.println("You will get 20% off");
+								System.out.println();
+								
+							}else {
+								System.out.println("Not in the range");
+								System.out.println();
+							
+							}
+						}
 				
-				System.out.println("These are the list of fee base on the route: ");
-				
-				for (int j = 0; j < fee.length; j++) {
-					System.out.println(fee[j]);
-			
-				}
-				
-				int i1 = 35;
-				int i2 = 30;
-				int i3 = 32;
-				int i4 = 40;
-				int i5 = 33;
-				int i6 = 31;
-				int i7 = 34;
-				int i8 = 38;
-					
-				if (i1 < i4) {
-					System.out.println("Route4 cheaper");
-				}
-				if (i1 > i4) {
-					System.out.println("Route1 more pricey");
-				}
-				if (i2 > i6) {
-					System.out.println("Route2 more pricey");
-				}
-				if (i2 < i6) {
-					System.out.println("Route2 cheaper");
-				}
-				if (i3 >= i7) {
-					System.out.println("Route3 much pricey");
-				}
-				if (i3 <= i7) {
-					System.out.println("Route3 much cheaper");
-				}
-				if (i4 <= i8) {
-					System.out.println("Route4 much cheaper");
-				}
-				if (i4 >= i8) {
-					System.out.println("Route4 much pricey");
-				}
-				
-				System.out.print("What route path that you want to go: " + routes[0]);
-				System.out.println();
-				System.out.print("Fee that customer need to pay: " + fee[0]);
-				System.out.println();
-				
-				System.out.println("**********THANK YOU FOR YOUR PURCHASE**********");
-			
-			
-
+				public static void printTotal() {
+								
+							Scanner in = new Scanner (System.in);
+							int discount;
+							int sum;
+							
+							System.out.print("Enter the price: RM ");
+							sum = in.nextInt();
+							
+							if (sum < 35) {
+								discount = sum * 5/100;
+								System.out.println();
+								
+						}else if (sum < 41) {
+							discount = sum * 10/100;
+							System.out.println();
+							
+						}else {
+							discount = sum * 20/100;
+							System.out.println();
+						}
+							
+							int total = sum - discount;
+							System.out.println("Discount that you get: RM " + discount);
+							System.out.println("Total price that you need to pay after discount: RM " + total);
+							
+							System.out.println();
+							System.out.println("***THANK YOU FOR CHOOSING US***");
+							System.out.println("PLEASE COME AGAIN");
+							
+							
 		}
-		
+
+
+	}
 		
 
 	
-	
-	
-	
-	
-	
-	
-
-}
